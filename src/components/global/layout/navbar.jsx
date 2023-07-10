@@ -1,10 +1,17 @@
-export default function NavBar() {
+import NavDropdown from "react-bootstrap/NavDropdown";
+import Images from "../../../../assets";
+const Navigation = () => {
+    const logoStyle = {
+        height: "64px",
+        width: "128px",
+        objectFit: "contain",
+    };
     return (
         <>
-            <nav className='navbar navbar-expand-lg bg-light fixed-top'>
-                <div className='container d-flex justify-content-between'>
+            <nav className='navbar navbar-expand-lg bg-body-tertiary px-5'>
+                <div className='container-fluid'>
                     <a className='navbar-brand' href='#'>
-                        MeeDorz
+                        <img src={Images.Logo} alt='logo' style={logoStyle} />
                     </a>
                     <button
                         className='navbar-toggler'
@@ -31,15 +38,50 @@ export default function NavBar() {
                                     Home
                                 </a>
                             </li>
+                            <li className='nav-item'>
+                                <a className='nav-link' href='#'>
+                                    Link
+                                </a>
+                            </li>
+                            <NavDropdown
+                                title='Dropdown'
+                                id='basic-nav-dropdown'
+                            >
+                                <NavDropdown.Item href='#action/3.1'>
+                                    Action
+                                </NavDropdown.Item>
+                                <NavDropdown.Item href='#action/3.2'>
+                                    Another action
+                                </NavDropdown.Item>
+                                <NavDropdown.Item href='#action/3.3'>
+                                    Something
+                                </NavDropdown.Item>
+                                <NavDropdown.Divider />
+                                <NavDropdown.Item href='#action/3.4'>
+                                    Separated link
+                                </NavDropdown.Item>
+                            </NavDropdown>
+                            <li className='nav-item'>
+                                <a className='nav-link disabled'>Disabled</a>
+                            </li>
                         </ul>
-                        <form className='d-flex' role='login'>
-                            <button className='btn btn-success' type='button'>
-                                Login
-                            </button>
-                        </form>
+                        <ul className='navbar-nav'>
+                            <li className='nav-item'>
+                                <a className=' text-uppercase btn btn-primary py-2 px-4'>
+                                    masuk
+                                </a>
+                            </li>
+                            <li className='nav-item'>
+                                <a className=' text-uppercase btn btn-warning py-2 px-4 ms-lg-3'>
+                                    daftar
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </nav>
         </>
     );
-}
+};
+
+export default Navigation;
