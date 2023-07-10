@@ -1,14 +1,16 @@
 import NavDropdown from "react-bootstrap/NavDropdown";
+import Nav from "react-bootstrap/Nav";
 import Images from "../../../../assets";
+import { BiLogoWhatsapp } from "react-icons/bi";
 const Navigation = () => {
   const logoStyle = {
-    height: "64px",
+    height: "72px",
     width: "128px",
     objectFit: "contain",
   };
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary px-5">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary px-4 shadow-lg">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
             <img src={Images.Logo} alt="logo" style={logoStyle} />
@@ -26,41 +28,55 @@ const Navigation = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
-                  Home
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Link
-                </a>
-              </li>
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown title="Meeting & Event" id="basic-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">
+                  Ruang Meeting
+                </NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Something
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
+                  Ruang Acara
                 </NavDropdown.Item>
               </NavDropdown>
-              <li className="nav-item">
-                <a className="nav-link disabled">Disabled</a>
-              </li>
+              <NavDropdown title="Workspace" id="basic-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">
+                  Ruang Kantor
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">
+                  Coworking Space
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">
+                  Co-Living
+                </NavDropdown.Item>
+              </NavDropdown>
+              <NavDropdown title="Virtual Office" id="basic-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">
+                  Virtual Office
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">
+                  Virtual Office & Pendirian PT
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">
+                  Pendirian PT
+                </NavDropdown.Item>
+              </NavDropdown>
+              <Nav.Link href="#link">Paket Meeting</Nav.Link>
             </ul>
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className=" text-uppercase btn btn-primary py-2 px-4">
+                <a
+                  className=" text-uppercase  text-decoration-none text-black d-lg-flex align-items-center mt-lg-2"
+                  style={{ fontSize: "14px", cursor: "pointer" }}
+                >
+                  <BiLogoWhatsapp size={16} className="" />
+                  +628 12 65656507
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className=" text-uppercase btn btn-primary py-2 px-4  ms-lg-3">
                   masuk
                 </a>
               </li>
               <li className="nav-item">
-                <a className=" text-uppercase btn btn-warning py-2 px-4 ms-lg-3">
+                <a className=" text-uppercase btn btn-outline-dark py-2 px-4 ms-lg-3">
                   daftar
                 </a>
               </li>
