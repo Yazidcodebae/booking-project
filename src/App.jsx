@@ -1,29 +1,23 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
-import { Button } from "react-bootstrap";
 import NavBar from "./components/global/layout/navbar";
-function App() {
-  const [count, setCount] = useState(0);
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
+import Layout from "./components/global/layout";
+import HomePage from "./components/pages/home/index.JSX";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-  return (
-    <>
-      <div>
-        <NavBar/>
-        <img src={viteLogo} className="logo" alt="Vite logo" />
-        <img src={reactLogo} className="logo react" alt="React logo" />
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <h1 className="text-success">Hello, world!</h1>
-      </div>
-      <Button variant="primary">Primary</Button>
-    </>
-  );
+function App() {
+    const router = createBrowserRouter([
+        {
+            path: "/",
+            element: <HomePage />,
+        },
+    ]);
+
+    const [count, setCount] = useState(0);
+
+    return <RouterProvider router={router} />;
 }
 
 export default App;
