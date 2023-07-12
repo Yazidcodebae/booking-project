@@ -1,5 +1,5 @@
-import heroImage from "../../../../assets/img/hero.svg";
-import "../../../../assets/css/home.css";
+import heroImage from "../../assets/img/hero.svg";
+import "../../assets/css/home.css";
 import Finding from "./finding";
 export default function Hero() {
     return (

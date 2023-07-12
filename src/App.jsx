@@ -1,11 +1,11 @@
-import { useState } from "react";
 import "./App.css";
-import NavBar from "./components/global/layout/navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
-import Layout from "./components/global/layout";
 import HomePage from "./components/pages/home/index.JSX";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+import { store, persistor } from "./store/store";
 
 function App() {
     const router = createBrowserRouter([
@@ -15,9 +15,13 @@ function App() {
         },
     ]);
 
-    const [count, setCount] = useState(0);
-
-    return <RouterProvider router={router} />;
+    return (
+        <Provider store={store}>
+            <PersistGate loading={null} persistor={persistor}>
+                <RouterProvider router={router} />
+            </PersistGate>
+        </Provider>
+    );
 }
 
 export default App;

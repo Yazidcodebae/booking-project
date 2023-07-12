@@ -14,8 +14,8 @@ export default function Recomendation() {
                                     adipisicing elit. Consequatur, sit mollitia
                                 </p>
                             </div>
-                            <div className='card-recomendations bg-danger'>
-                                <div className='row d-flex gap-3'>
+                            <div className='card-recomendations'>
+                                <div className='row d-flex'>
                                     <RecomendationsCard />
                                 </div>
                             </div>

@@ -1,5 +1,5 @@
 import NavDropdown from "react-bootstrap/NavDropdown";
-import Images from "../../../../assets";
+import Images from "../../../assets/index";
 const Navigation = () => {
     const logoStyle = {
         height: "64px",
